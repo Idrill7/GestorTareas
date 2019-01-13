@@ -6,4 +6,6 @@
     <string name="todoTic">logoTic</string>
     <string name="todoFondoLogin">imagenFondoLogin</string>
     <string name="subtituloLogin">Todas tus tareas a un check</string>
+    <string name="hintUser">Usuario</string>
+    <string name="hintPass">Contraseña</string>
 </resources>
