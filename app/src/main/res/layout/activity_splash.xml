@@ -36,7 +36,7 @@
         android:layout_marginTop="34dp"
         android:src="@drawable/logocruz"
         android:contentDescription="@string/todoCruz" />
-
+    <!-- Tick del logo -->
     <ImageView
         android:id="@+id/logoTick"
         android:layout_width="153dp"
@@ -62,6 +62,7 @@
         android:textSize="50sp"
         android:textStyle="bold" />
 
+    <!-- Gif de carga -->
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifLapiz"
         android:layout_width="wrap_content"

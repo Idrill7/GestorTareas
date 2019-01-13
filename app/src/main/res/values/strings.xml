@@ -4,4 +4,6 @@
     <string name="todoCirculo">circuloSplash</string>
     <string name="todoCruz">logoCruz</string>
     <string name="todoTic">logoTic</string>
+    <string name="todoFondoLogin">imagenFondoLogin</string>
+    <string name="subtituloLogin">Todas tus tareas a un check</string>
 </resources>

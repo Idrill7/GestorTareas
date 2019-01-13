@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <!-- Imagen de fondo-->
+    <ImageView
+        android:id="@+id/imagenLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/todoFondoLogin"
+        android:scaleType="fitXY"
+        android:src="@drawable/fondologin" />
+
+    <ImageView
+        android:id="@+id/circulo"
+        android:layout_width="315dp"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/todoCruz"
+        android:src="@drawable/circulosplash" />
+
+    <!-- Cruz del logo -->
+    <ImageView
+        android:id="@+id/cruz"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/todoCruz"
+        android:src="@drawable/logocruz" />
+
+    <!-- Tick del logo -->
+    <ImageView
+        android:id="@+id/tick"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/todoTic"
+        android:src="@drawable/logotic" />
+
+    <!-- Texto de titulo-->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/texto_splash"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="45sp"
+        android:layout_below="@id/cruz"
+        android:shadowColor="@android:color/white"
+        android:shadowRadius="5"
+        />
+    <!-- Texto de subtitulo-->
+    <TextView
+        android:id="@+id/subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="2dp"
+        android:text="@string/subtituloLogin"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:shadowColor="@color/colorAccent"
+        android:shadowRadius="5"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="179dp"
+        android:layout_toStartOf="@+id/subtitulo"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="357dp"
+            android:layout_height="match_parent"
+            android:hint="hint" />
+    </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>
