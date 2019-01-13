@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,22 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-
+    <!-- Gradiente -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gradient" />
 
+    <!-- Circulo por debajo -->
+    <ImageView
+        android:id="@+id/circuloSplash"
+        android:layout_width="323dp"
+        android:layout_height="283dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/circulosplash"
+        android:contentDescription="@string/todoCirculo" />
+
+    <!-- Cruz del logo -->
+    <ImageView
+        android:id="@+id/logoCruz"
+        android:layout_width="153dp"
+        android:layout_height="138dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/logocruz"
+        android:contentDescription="@string/todoCruz" />
+
+    <ImageView
+        android:id="@+id/logoTick"
+        android:layout_width="153dp"
+        android:layout_height="138dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/logotic"
+        android:contentDescription="@string/todoTic" />
+
+    <!-- Texto titulo de la app-->
     <TextView
+        android:id="@+id/tituloApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="monospace"
-        android:text="TO-DO LIST"
+        android:layout_below="@+id/logoCruz"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="161dp"
+        android:text="@string/texto_splash"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorAccent"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
-        android:textSize="30sp" />
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifLapiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tituloApp"
+        android:src="@drawable/loadinglapiz" />
 
-</FrameLayout>
+</RelativeLayout>

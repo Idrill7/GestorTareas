@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">To-Do List</string>
+    <string name="texto_splash">TO-DO MANAGER</string>
+    <string name="todoCirculo">circuloSplash</string>
+    <string name="todoCruz">logoCruz</string>
+    <string name="todoTic">logoTic</string>
 </resources>

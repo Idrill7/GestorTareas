@@ -3,7 +3,6 @@
     package="com.idrilplays.idril.actividaduf2" >
 
     <application
-        
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:allowBackup="true"
