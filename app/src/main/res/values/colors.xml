@@ -3,4 +3,7 @@
     <color name="colorPrimary">#ffe259</color>
     <color name="colorPrimaryDark">#ffa751</color>
     <color name="colorAccent">#3d3b37</color>
+    <color name="colorAccentAlpha">#CC191919</color>
+    <color name="colorPDark2">#e48b33</color>
+    <color name="colorStrokeBoton">#1A191919</color>
 </resources>

@@ -8,4 +8,6 @@
     <string name="subtituloLogin">Todas tus tareas a un check</string>
     <string name="hintUser">Usuario</string>
     <string name="hintPass">Contraseña</string>
+    <string name="botonLoginTexto">ACCEDER</string>
+
 </resources>
