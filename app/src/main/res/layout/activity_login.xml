@@ -9,75 +9,66 @@
     <!-- Imagen de fondo-->
     <ImageView
         android:id="@+id/imagenLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:contentDescription="@string/todoFondoLogin"
         android:scaleType="fitXY"
-        android:src="@drawable/fondologin" />
+        android:src="@drawable/fondologin"
+        />
 
     <ImageView
-        android:id="@+id/circulo"
+        android:id="@+id/circuloLogin"
         android:layout_width="315dp"
         android:layout_height="69dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:contentDescription="@string/todoCruz"
-        android:src="@drawable/circulosplash" />
+        android:src="@drawable/circulosplash"
+        style="@style/AnimacionCirculoLogin"/>
 
     <!-- Cruz del logo -->
     <ImageView
-        android:id="@+id/cruz"
+        android:id="@+id/cruzLogin"
         android:layout_width="83dp"
         android:layout_height="54dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todoCruz"
-        android:src="@drawable/logocruz" />
+        android:src="@drawable/logocruz"
+        style="@style/AnimacionCirculoLogin"/>
 
     <!-- Tick del logo -->
     <ImageView
-        android:id="@+id/tick"
+        android:id="@+id/tickLogin"
         android:layout_width="83dp"
         android:layout_height="54dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todoTic"
-        android:src="@drawable/logotic" />
+        android:src="@drawable/logotic"
+        style="@style/AnimacionCirculoLogin"/>
 
     <!-- Texto de titulo-->
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cruz"
-        android:layout_centerHorizontal="true"
+        style="@style/TextosLogin"
+        android:layout_below="@id/cruzLogin"
         android:layout_marginTop="8dp"
         android:shadowColor="@android:color/white"
-        android:shadowRadius="5"
         android:text="@string/texto_splash"
-        android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textSize="45sp"
-        android:textStyle="bold" />
+        android:textSize="45sp" />
+
     <!-- Texto de subtitulo-->
     <TextView
         android:id="@+id/subtitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TextosLogin"
         android:layout_below="@+id/titulo"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp"
         android:shadowColor="@color/colorAccent"
-        android:shadowRadius="5"
         android:text="@string/subtituloLogin"
         android:textColor="@android:color/white"
         android:textSize="20sp" />
-
 
     <!-- Layout que introduce cajas de texto en una caja -->
     <LinearLayout
@@ -92,20 +83,32 @@
         android:padding="10dp"
         android:background="@color/colorAccentAlpha">
 
+        <!-- Layout para establecer una imagen a la izquierda de la caja -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Imagen de usuario -->
+            <ImageView
+                android:id="@+id/usuario"
+                style="@style/ImagenesLogin"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/user_36"
+                android:contentDescription="@string/todoimagenusuario"/>
+
+
         <!-- Caja de texto con hint  para el usuario-->
         <android.support.design.widget.TextInputLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/usuario"
             >
 
             <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/cajaUser"
+                style="@style/MyEditTextTheme"
                 android:hint="@string/hintUser"
-                android:textSize="17sp"
                 android:theme="@style/MyEditTextTheme"
-                android:textColorHint="@color/colorPrimaryDark"
                 >
 
                 <!-- Esta caja obtiene el foco principal-->
@@ -114,23 +117,40 @@
             </android.support.design.widget.TextInputEditText>
         </android.support.design.widget.TextInputLayout>
 
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Imagen de contrasena -->
+            <ImageView
+                android:id="@+id/candado"
+                style="@style/ImagenesLogin"
+                android:src="@drawable/lock_36"
+                android:layout_marginTop="26dp"
+                android:contentDescription="@string/todoimagencontrasena"
+                />
+
         <!-- Caja de texto con hint  para la contrasena-->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/candado"
             >
 
             <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/cajaPassword"
+                style="@style/MyEditTextTheme"
                 android:hint="@string/hintPass"
                 android:inputType="textPassword"
-                android:textSize="17sp"
                 android:theme="@style/MyEditTextTheme"
-                android:textColorHint="@color/colorPrimaryDark"
                 />
         </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -144,11 +164,12 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/botonlogin"
-        android:paddingLeft="60dp"
-        android:paddingRight="40dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="40dp"
         android:text="@string/botonLoginTexto"
         android:textSize="15sp"
-        android:drawableEnd="@drawable/input_24"
+        android:drawableEnd="@drawable/input"
+        android:onClick="hacerLogin"
         />
 
     <CheckBox
@@ -159,39 +180,34 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:buttonTint="@color/colorAccent"
-        android:text="Recordar cuenta"
+        android:text="@string/recordarCuenta"
         android:textColor="@color/colorAccent"
         />
 
     <!-- Texto contrasena olvidada -->
     <TextView
         android:id="@+id/recordarPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/botonLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="170dp"
+        style="@style/TextosLogin"
+        android:layout_above="@+id/nuevoUser"
+        android:layout_marginBottom="5dp"
         android:shadowColor="@color/colorPrimaryDark"
-        android:shadowRadius="3"
-        android:text="¿Has olvidado tu contraseña?"
+        android:text="@string/contrasenaOlvidada"
         android:textColor="@color/colorAccent"
         android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:onClick="recordarPass"
+        />
 
     <!-- Texto creacion usuarios -->
     <TextView
         android:id="@+id/nuevoUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recordarPass"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        style="@style/TextosLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
         android:shadowColor="@color/colorPrimary"
         android:shadowRadius="3"
-        android:text="Registrar cuenta nueva"
+        android:text="@string/registrarCuenta"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
-        android:textStyle="bold"/>
-
+        android:onClick="crearCuenta"/>
 
 </RelativeLayout>

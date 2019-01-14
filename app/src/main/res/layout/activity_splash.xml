@@ -29,21 +29,13 @@
     <!-- Cruz del logo -->
     <ImageView
         android:id="@+id/logoCruz"
-        android:layout_width="153dp"
-        android:layout_height="138dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        style="@style/SplashLogo"
         android:src="@drawable/logocruz"
         android:contentDescription="@string/todoCruz" />
     <!-- Tick del logo -->
     <ImageView
         android:id="@+id/logoTick"
-        android:layout_width="153dp"
-        android:layout_height="138dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        style="@style/SplashLogo"
         android:src="@drawable/logotic"
         android:contentDescription="@string/todoTic" />
 

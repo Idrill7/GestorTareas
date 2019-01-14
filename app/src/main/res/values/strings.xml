@@ -9,5 +9,10 @@
     <string name="hintUser">Usuario</string>
     <string name="hintPass">Contraseña</string>
     <string name="botonLoginTexto">ACCEDER</string>
+    <string name="contrasenaOlvidada">¿Has olvidado tu contraseña?</string>
+    <string name="registrarCuenta">Registrar cuenta nueva</string>
+    <string name="recordarCuenta">Recordar cuenta</string>
+    <string name="todoimagencontrasena">todoImagenContrasena</string>
+    <string name="todoimagenusuario">todoImagenUsuario</string>
 
 </resources>
