@@ -31,7 +31,7 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         circuloSplash = (ImageView) findViewById(R.id.circuloSplash);
 
         //Ocultamos la Actionbar
-       // getSupportActionBar().hide();
+       //getSupportActionBar().hide();
 
         // Creamos un objeto TypeFace, a este le indicamos que de los asset obtenga la fuente mediante el nombre dado
         Typeface miFuente = Typeface.createFromAsset(getAssets(), "big_noodle_titling.ttf");

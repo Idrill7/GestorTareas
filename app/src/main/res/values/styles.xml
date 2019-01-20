@@ -1,12 +1,22 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme. Estilo sin ActionBar-->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <!-- Main application theme. Estilo con ActionBar -->
+    <style name="AppThemeMain" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <!-- Estilo para que no se muestre una pantalla en blanco antes del splash -->
     <style name="BeforeSplash" parent="AppTheme">
     <item name="android:windowBackground">@drawable/gradient</item>
@@ -51,7 +61,6 @@
 
     <!-- Animacion circulo login-->
     <style name="AnimacionCirculoLogin">
-
         <item name="android:onClick">moverCirculo</item>
     </style>
 </resources>

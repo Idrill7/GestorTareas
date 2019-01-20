@@ -94,7 +94,8 @@
                 style="@style/ImagenesLogin"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/user_36"
-                android:contentDescription="@string/todoimagenusuario"/>
+                android:contentDescription="@string/todoimagenusuario"
+                />
 
 
         <!-- Caja de texto con hint  para el usuario-->

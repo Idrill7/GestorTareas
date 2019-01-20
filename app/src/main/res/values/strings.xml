@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">To-Do List</string>
+    <string name="app_name">To-Do Manager</string>
     <string name="texto_splash">TO-DO MANAGER</string>
     <string name="todoCirculo">circuloSplash</string>
     <string name="todoCruz">logoCruz</string>
@@ -14,5 +14,9 @@
     <string name="recordarCuenta">Recordar cuenta</string>
     <string name="todoimagencontrasena">todoImagenContrasena</string>
     <string name="todoimagenusuario">todoImagenUsuario</string>
-
+    <string name="titleMenuIconAdd">ItemAdd</string>
+    <string name="actionBarMainText">Mis tareas</string>
+    <string name="dialogTitle">Insertar nueva tarea</string>
+    <string name="dialogNegativeText">Cancelar</string>
+    <string name="dialogPositiveText">Añadir</string>
 </resources>

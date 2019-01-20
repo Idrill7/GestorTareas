@@ -28,6 +28,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Ocultamos la Actionbar
+        //getSupportActionBar().hide();
+
         //Obtenemos las views segun su identificador
         titulo = (TextView) findViewById(R.id.titulo);
         subtitulo = (TextView) findViewById(R.id.subtitulo);
