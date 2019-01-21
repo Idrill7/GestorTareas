@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     /**
      * Metodo con un toast para indicar que el registro de cuentas no esta implementado aun
-     * @param view
+     * @param view la view que es el TextView
      */
     public void crearCuenta(View view) {
         // Creamos un objeto de la clase Toast
@@ -62,14 +63,14 @@ public class LoginActivity extends AppCompatActivity {
         // Creamos objeto de la clase Animation
         Animation animacionRegistrar = AnimationUtils.loadAnimation(this, R.anim.animacionregistrar);
         //Aniciamos la animacion
-        registro.startAnimation(animacionRegistrar);
+        view.startAnimation(animacionRegistrar);
         //Mostramos el toast
         toastCuenta.show();
     }
 
     /**
      * Animacion al hacer click en el logo que mueve el circulo trasero
-     * @param view
+     * @param view la view que hace la llamada en el onclick
      */
     public void moverCirculo(View view) {
         // Creamos objeto de la clase Animation
@@ -84,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Toast para recordar contrasena
-     * @param view
+     * @param view la view que hace la llamada en el onclick, el textView
      */
     public void recordarPass(View view) {
 
@@ -112,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Funcionalidad al boton de Login para cambiar de Activity
-     * @param view
+     * @param view que es el Button de acceso
      *
      */
     public void hacerLogin(View view){
@@ -122,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Si coincide el usuario y la password pasa a la siguiente Activity
         if ( textoUser.equals("Alex") && textoPassword.equals("IRONman19")) {
+
 
             //Creamos objeto de la clase Intent
             Intent intent = new Intent(this, MainActivity.class);
@@ -137,5 +139,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 }

@@ -25,5 +25,6 @@
         android:src="@mipmap/checktask_b"
         android:background="@drawable/botonlogin"
         android:contentDescription="@string/todocompletetask"
-        android:layout_toEndOf="@id/botonTarea"/>
+        android:layout_toEndOf="@id/botonTarea"
+        android:onClick="borrarTarea"/>
 </RelativeLayout>

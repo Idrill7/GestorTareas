@@ -2,6 +2,7 @@ package com.idrilplays.idril.actividaduf2;
 
 import android.content.DialogInterface;
 import android.graphics.PorterDuff;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +10,15 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.idrilplays.idril.actividaduf2.db.ControladorDB;
@@ -116,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             /*
-             * Creamos el objeto ArrayAdapter y le pasamos por argumentos el contexto, con que vamos a reyenar cada elemento del listview que va a ser el archivo item_list.xml
-             * dentro del item_list obtenemos el TextView que es lo que contendra el texto, y un metodo de la clase ControladorDB que hara un SELECT
+             * Creamos el objeto ArrayAdapter y le pasamos por argumentos el contexto, con que vamos a rellenar cada elemento del listview que va a ser el archivo item_list.xml
+             * dentro del item_list obtenemos el TextView que es lo que contendra el texto, y un metodo de la clase ControladorDB que devuelve el NOMBRE de todas las tareas
              */
             myAdapter = new ArrayAdapter<>(this, R.layout.item_list,R.id.textoTarea, controlador.obtenerTareas());
             // Le establecemos el Adapter al ListView
@@ -125,4 +131,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void borrarTarea(View view) {
+
+        // Obtenemos el View padre del view que entra por argumento, que es RelativeLayout del boton que llama a este metodo en el onclik
+        View parent = (View) view.getParent();
+        // Dentro del padre buscamos el identificador del TextView, lo guardamos en una variable TextView que es lo que nos devuelve
+        TextView tareaTextView = (TextView) parent.findViewById(R.id.textoTarea);
+        // Guardamos en otra variable el contenido del TextView
+        String tarea = tareaTextView.getText().toString();
+
+        // Usamos el metodo borrarTarea de la clase ControladorDB y le pasamos como argumento el texto de la tarea que acompana al boton
+        controlador.borrarTarea(tarea);
+
+        // Actualizamos la interfaz
+        actualizarUI();
+    }
+
 }

@@ -28,7 +28,7 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     /**
      * Metodo publico que no retorna nada y recibe por argumento una tarea que es insertada
-     * @param tarea texto de la tarea
+     * @param tarea texto de la tarea a insertar
      */
     public void addTarea(String tarea){
 
@@ -62,6 +62,7 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     /**
      * Metodo publico que devuelve un Array de String que seran las tareas
+     * @return String[] Array de cadenas de texto, el campo NOMBRE de cada registro de la tabla TAREA
      */
     public String[] obtenerTareas() {
 
@@ -130,4 +131,27 @@ public class ControladorDB extends SQLiteOpenHelper {
 
 
     }
+
+    /**
+     * Metodo publico que no retorna nada, recibe por argumento un String que va a ser la tarea eliminada
+     * @param tarea texto de la tarea a borrar
+     */
+   public void borrarTarea(String tarea) {
+
+       // Abrimos la BD para lectura y escritura ya que vamos a borrar un registro
+       SQLiteDatabase db = this.getWritableDatabase();
+
+       /*
+        * Hacemos un DELETE con el metodo delete() que pasara como parametro la tabla TAREA
+        * y como segundo parametro la condicion, en este caso, que el campo nombre sea igual al String recibido
+        * Esto se determina con una interrogacion que se establecera en el tercer parametro del metodo delete
+        *
+        * Como tercer parametro requiere un Array de String, por lo que lo convertimos en un Array de solo un elemento
+        */
+       db.delete("TAREA", "NOMBRE=?", new String[]{tarea});
+
+       // Cerramos la base de datos
+       db.close();
+
+   }
 }
