@@ -3,6 +3,7 @@ package com.idrilplays.idril.actividaduf2;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView circulo;
     private TextInputEditText cajaUser;
     private TextInputEditText cajaPass;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +126,8 @@ public class LoginActivity extends AppCompatActivity {
         // Si coincide el usuario y la password pasa a la siguiente Activity
         if ( textoUser.equals("Alex") && textoPassword.equals("IRONman19")) {
 
-
+            mp = MediaPlayer.create(this, R.raw.correctlogin);
+            mp.start();
             //Creamos objeto de la clase Intent
             Intent intent = new Intent(this, MainActivity.class);
             // Comenzamos el cambio de actividad
@@ -132,6 +135,8 @@ public class LoginActivity extends AppCompatActivity {
 
         } // Si no coincide, se le indica
         else {
+            mp = MediaPlayer.create(this, R.raw.wronglogin);
+            mp.start();
             // Creamos un objeto de la clase Toast
             Toast toastPass = Toast.makeText(this,"Credenciales no validas" , Toast.LENGTH_LONG);
             //Mostramos el toast

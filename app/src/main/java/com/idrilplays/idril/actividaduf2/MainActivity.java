@@ -2,6 +2,8 @@ package com.idrilplays.idril.actividaduf2;
 
 import android.content.DialogInterface;
 import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -15,8 +17,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     // Creamos la referencia al ListView
     private ListView listaTareas;
 
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Cambio de color del texto de la ActionBar mediante html
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.actionBarMainText) + "</font>"));
+
 
     }
 
@@ -143,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Usamos el metodo borrarTarea de la clase ControladorDB y le pasamos como argumento el texto de la tarea que acompana al boton
         controlador.borrarTarea(tarea);
+
+        // sonido al borrar tarea
+        mp = MediaPlayer.create(this, R.raw.donetask);
+        mp.start();
 
         // Actualizamos la interfaz
         actualizarUI();
