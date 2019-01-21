@@ -8,18 +8,22 @@
 
     <TextView
         android:id="@+id/textoTarea"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textoTaskItemList"
         android:textSize="20sp"
         android:layout_alignBaseline="@id/botonTarea"
+        android:layout_toStartOf="@id/botonTarea"
+        android:layout_marginEnd="5dp"
         />
 
     <ImageButton
         android:id="@+id/botonTarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:src="@mipmap/checktask_b"
-        android:background="@drawable/botonlogin" />
+        android:background="@drawable/botonlogin"
+        android:contentDescription="@string/todocompletetask"
+        android:layout_toEndOf="@id/botonTarea"/>
 </RelativeLayout>

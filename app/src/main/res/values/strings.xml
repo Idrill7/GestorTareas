@@ -19,4 +19,6 @@
     <string name="dialogTitle">Insertar nueva tarea</string>
     <string name="dialogNegativeText">Cancelar</string>
     <string name="dialogPositiveText">Añadir</string>
+    <string name="textoTaskItemList">TextView</string>
+    <string name="todocompletetask">todoCompleteTask</string>
 </resources>
