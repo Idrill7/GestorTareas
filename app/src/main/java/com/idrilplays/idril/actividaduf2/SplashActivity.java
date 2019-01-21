@@ -68,6 +68,7 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         Intent intent = new Intent(this, LoginActivity.class);
         // Iniciamos el cambio de activity
         startActivity(intent);
+
         //Acabamos el Activity del splash ya que no vamos a retroceder a ella
         finish();
 

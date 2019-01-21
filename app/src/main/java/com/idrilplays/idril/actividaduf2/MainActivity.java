@@ -1,33 +1,24 @@
 package com.idrilplays.idril.actividaduf2;
 
 import android.content.DialogInterface;
-import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.idrilplays.idril.actividaduf2.db.ControladorDB;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> myAdapter;
     // Creamos la referencia al ListView
     private ListView listaTareas;
-
+    // Referencia al mediaPlayer pare reproducir sonidos
     private MediaPlayer mp;
 
     @Override
@@ -99,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         // Lanzamos el metodo actualizarUI para actualizar la interfaz
                         actualizarUI();
 
+                        // Lanzamos un Toast
+                        lanzarToastAdd();
                     }
                 })
 
@@ -156,6 +149,59 @@ public class MainActivity extends AppCompatActivity {
 
         // Actualizamos la interfaz
         actualizarUI();
+
+        //Lanzamos un Toast
+        lanzarToastDelete();
     }
 
+    /*
+     * Metodo que se usa para lanzar un Toast al aniadir una tarea
+     */
+
+    private void lanzarToastAdd() {
+        // Creamos el toast
+        Toast toast = new Toast(this);
+
+        // Inflamos el layout mediante un objeto LayoutInflater
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_add_layout,
+                (ViewGroup) findViewById(R.id.lytLayoutAdd));
+
+        // Una vez construido el layout, modificamos los valores para mostrar el mensaje de texto
+        TextView txtToast = (TextView)layout.findViewById(R.id.txtToastAdd);
+        txtToast.setText("Nueva tarea añadida");
+
+
+        // Establecemos la duracion de la notificacion toast
+        toast.setDuration(Toast.LENGTH_LONG);
+        // Asignamos el layout personalizado al toast mediante
+        toast.setView(layout);
+        // Mostramos el Toast
+        toast.show();
+    }
+
+    /*
+     * Metodo que se usa para lanzar un Toast al eliminar una tarea
+     */
+    private void lanzarToastDelete() {
+        // Creamos el toast
+        Toast toast = new Toast(this);
+
+        // Inflamos el layout mediante un objeto LayoutInflater
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_delete_layout,
+                (ViewGroup) findViewById(R.id.lytLayoutDelete));
+
+        // Una vez construido el layout, modificamos los valores para mostrar el mensaje de texto
+        TextView txtToast = (TextView)layout.findViewById(R.id.txtToastDelete);
+        txtToast.setText("Tarea realizada");
+
+
+        // Establecemos la duracion de la notificacion toast
+        toast.setDuration(Toast.LENGTH_LONG);
+        // Asignamos el layout personalizado al toast mediante
+        toast.setView(layout);
+        // Mostramos el Toast
+        toast.show();
+    }
 }

@@ -21,4 +21,6 @@
     <string name="dialogPositiveText">Añadir</string>
     <string name="textoTaskItemList">TextView</string>
     <string name="todocompletetask">todoCompleteTask</string>
+    <string name="todoimageniconoadd">TODOIMAGENICONOADD</string>
+    <string name="todoimagendelete">TODOIMAGENDELETE</string>
 </resources>

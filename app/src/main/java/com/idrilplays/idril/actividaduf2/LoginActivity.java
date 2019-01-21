@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -66,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         Animation animacionRegistrar = AnimationUtils.loadAnimation(this, R.anim.animacionregistrar);
         //Aniciamos la animacion
         view.startAnimation(animacionRegistrar);
+        //  Establecemos la posicion
+        toastCuenta.setGravity(Gravity.BOTTOM,0,280);
         //Mostramos el toast
         toastCuenta.show();
     }
@@ -99,6 +102,8 @@ public class LoginActivity extends AppCompatActivity {
 
             // Creamos un objeto de la clase Toast
             Toast toastPass = Toast.makeText(this,"Alex, tu contrasena es: IRONman19" , Toast.LENGTH_LONG);
+            //  Establecemos la posicion
+            toastPass.setGravity(Gravity.BOTTOM,0,450);
             //Mostramos el toast
             toastPass.show();
 
@@ -106,6 +111,8 @@ public class LoginActivity extends AppCompatActivity {
         else {
             // Creamos un objeto de la clase Toast
             Toast toastPass = Toast.makeText(this,"No eres Alex" , Toast.LENGTH_LONG);
+            //  Establecemos la posicion
+            toastPass.setGravity(Gravity.BOTTOM,0,450);
             //Mostramos el toast
             toastPass.show();
         }
@@ -127,24 +134,27 @@ public class LoginActivity extends AppCompatActivity {
         if ( textoUser.equals("Alex") && textoPassword.equals("IRONman19")) {
 
             mp = MediaPlayer.create(this, R.raw.correctlogin);
+            mp.setVolume(0.4f,0.4f);
             mp.start();
             //Creamos objeto de la clase Intent
             Intent intent = new Intent(this, MainActivity.class);
             // Comenzamos el cambio de actividad
             startActivity(intent);
 
+
         } // Si no coincide, se le indica
         else {
             mp = MediaPlayer.create(this, R.raw.wronglogin);
+            mp.setVolume(0.2f,0.2f);
             mp.start();
             // Creamos un objeto de la clase Toast
             Toast toastPass = Toast.makeText(this,"Credenciales no validas" , Toast.LENGTH_LONG);
+            //  Establecemos la posicion
+            toastPass.setGravity(Gravity.TOP,0,300);
             //Mostramos el toast
             toastPass.show();
         }
 
     }
-
-
 
 }
