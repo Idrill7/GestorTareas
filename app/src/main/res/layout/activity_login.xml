@@ -15,7 +15,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/fondologin"
         />
-
+    <!-- Imagen circulo del logo-->
     <ImageView
         android:id="@+id/circuloLogin"
         android:layout_width="315dp"
@@ -24,7 +24,8 @@
         android:layout_marginTop="0dp"
         android:contentDescription="@string/todoCruz"
         android:src="@drawable/circulosplash"
-        style="@style/AnimacionCirculoLogin"/>
+        android:onClick="moverCirculo"/>
+
 
     <!-- Cruz del logo -->
     <ImageView
@@ -35,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todoCruz"
         android:src="@drawable/logocruz"
-        style="@style/AnimacionCirculoLogin"/>
+        android:onClick="moverCirculo"/>
 
     <!-- Tick del logo -->
     <ImageView
@@ -46,7 +47,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todoTic"
         android:src="@drawable/logotic"
-        style="@style/AnimacionCirculoLogin"/>
+        android:onClick="moverCirculo"/>
 
     <!-- Texto de titulo-->
     <TextView
@@ -190,7 +191,7 @@
         android:id="@+id/recordarPass"
         style="@style/TextosLogin"
         android:layout_above="@+id/nuevoUser"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:shadowColor="@color/colorPrimaryDark"
         android:text="@string/contrasenaOlvidada"
         android:textColor="@color/colorAccent"

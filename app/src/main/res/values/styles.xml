@@ -59,8 +59,5 @@
         <item name="android:layout_alignParentTop">true</item>
     </style>
 
-    <!-- Animacion circulo login-->
-    <style name="AnimacionCirculoLogin">
-        <item name="android:onClick">moverCirculo</item>
-    </style>
+
 </resources>

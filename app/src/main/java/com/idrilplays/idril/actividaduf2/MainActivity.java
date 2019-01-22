@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.idrilplays.idril.actividaduf2.db.ControladorDB;
 
+
 public class MainActivity extends AppCompatActivity {
 
     // Creamos la referencia a  un objeto de la clase ControladorDB
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
 
-        //Creamos el objeto de EditText que sera la caja de texto que va a ser contenida dentro del AlertDialog, el contexto sera this, por ello lo creamos antes.
+        //Creamos el objeto de EditText que sera la caja de texto que va a ser contenida dentro del AlertDialog, el contexto sera este, this (MainActivity) , por ello lo creamos antes.
          final EditText cajaTexto = new EditText(this);
 
         /*
@@ -84,14 +85,15 @@ public class MainActivity extends AppCompatActivity {
                         // Almacenamos la cadena de texto en una variable, que sera el contenido del EditText
                         String tarea= cajaTexto.getText().toString();
 
-                        //Usamos el metodo addTarea para insertar el texto de la caja como una tarea
-                        controlador.addTarea(tarea);
+                            //Usamos el metodo addTarea para insertar el texto de la caja como una tarea
+                            controlador.addTarea(tarea);
 
-                        // Lanzamos el metodo actualizarUI para actualizar la interfaz
-                        actualizarUI();
+                            // Lanzamos el metodo actualizarUI para actualizar la interfaz
+                            actualizarUI();
 
-                        // Lanzamos un Toast
-                        lanzarToastAdd();
+                            // Lanzamos un Toast
+                            lanzarToastAdd();
+
                     }
                 })
 
